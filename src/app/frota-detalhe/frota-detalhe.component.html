@@ -28,21 +28,19 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let caminhao of frota.caminhoes">
-              <td>{{ caminhao.id }}</td>
-              <td>{{ caminhao.placa }}</td>
-              <td>{{ caminhao.modelo }}</td>
-              <td>{{ caminhao.situacao }}</td>
-              <td>{{ caminhao.motorista }}</td>
+            <tr *ngFor="let v of frota.veiculos">
+              <td>{{ v.id }}</td>
+              <td>{{ v.placa }}</td>
+              <td>{{ v.modelo }}</td>
+              <td>{{ v.situacao }}</td>
+              <td>{{ v.motorista }}</td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
 
-    <a routerLink="/frotas" class="btn btn-primary mt-4">Voltar</a>
+    <a routerLink="/frotas" class="btn btn-primary mt-4" style="margin-right: 10px;">Voltar</a>
+    <button class="btn btn-success mt-4" (click)="openDialog()">Novo veículo</button>
   </div>
-
-
-
 </div>

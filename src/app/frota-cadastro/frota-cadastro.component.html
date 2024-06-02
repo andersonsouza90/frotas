@@ -1,0 +1,38 @@
+<div class="jumbotron">
+  <div class="icon-link">
+    <i class="fas fa-truck fa-5x"></i>
+    <h4>Nova frota</h4>
+  </div>
+  <hr class="my-4">
+
+  <div class="container mt-5">
+    <h2>Cadastrar Nova Frota</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="nome">Nome da Frota</label>
+        <input type="text" class="form-control" id="nome" [(ngModel)]="newFrota.nome" name="nome" required>
+      </div>
+      <div class="form-group">
+        <label for="tipo">Tipo</label>
+        <select class="form-control" id="tipo" [(ngModel)]="newFrota.tipo" name="tipo" required>
+          <option value="">Selecione o tipo</option>
+          <option value="Caminhão">Caminhão</option>
+          <option value="Van">Van</option>
+          <option value="HR">HR</option>
+          <option value="Carro">Carro</option>
+          <option value="Moto">Moto</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="cnpj">CNPJ</label>
+        <input type="text" class="form-control" id="cnpj" [(ngModel)]="newFrota.cnpj" name="cnpj" required>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary" style="margin-right: 10px;">Cadastrar</button>
+      <a class="btn btn-danger" [routerLink]="['/frotas']">Cancelar</a>
+    </form>
+  </div>
+
+
+
+</div>
