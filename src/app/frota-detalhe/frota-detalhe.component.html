@@ -1,0 +1,48 @@
+<div class="jumbotron" *ngIf="frota">
+  <div class="icon-link">
+    <i class="fas fa-truck fa-5x"></i>
+    <h4>{{ frota.nome }}</h4>
+  </div>
+  <hr class="my-4">
+
+  <div class="container mt-5" *ngIf="frota">
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text"><strong>Tipo:</strong> {{ frota.tipo }}</p>
+        <p class="card-text"><strong>CNPJ:</strong> {{ frota.cnpj }}</p>
+        <p class="card-text"><strong>Status:</strong> {{ frota.status }}</p>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <h3>Caminhões da frota</h3>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Placa</th>
+              <th>Modelo</th>
+              <th>Situação</th>
+              <th>Motorista</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let caminhao of frota.caminhoes">
+              <td>{{ caminhao.id }}</td>
+              <td>{{ caminhao.placa }}</td>
+              <td>{{ caminhao.modelo }}</td>
+              <td>{{ caminhao.situacao }}</td>
+              <td>{{ caminhao.motorista }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <a routerLink="/frotas" class="btn btn-primary mt-4">Voltar</a>
+  </div>
+
+
+
+</div>

@@ -1,0 +1,42 @@
+<div class="jumbotron">
+  <div class="icon-link">
+    <i class="fas fa-truck fa-5x"></i>
+    <h4>Frotas</h4>
+  </div>
+  <hr class="my-4">
+
+  <div class="container mt-5">
+    <h2>Lista de Frotas</h2>
+    <input type="text" class="form-control mb-3" placeholder="Pesquisar..." [(ngModel)]="searchTerm">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nome da frota</th>
+            <th>Tipo</th>
+            <th>CNPJ</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let f of filteredFrotas | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
+            <td>{{ (p - 1) * 5 + i + 1 }}</td>
+            <td>{{ f.nome }}</td>
+            <td>{{ f.tipo }}</td>
+            <td>{{ f.cnpj }}</td>
+            <td>{{ f.status }}</td>
+            <td>
+              <a class="btn btn-primary btn-sm" [routerLink]="['/frota-detalhe', i+1]">Detalhes</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+
+
+
+</div>
