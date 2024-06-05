@@ -13,7 +13,6 @@ export class FrotaCadastroComponent {
   newFrota: Frota = {
     id: 0,
     nome: '',
-    tipo: '',
     cnpj: '',
     status: '',
     veiculos: []

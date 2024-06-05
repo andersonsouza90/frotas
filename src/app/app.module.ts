@@ -14,6 +14,8 @@ import { FrotaCadastroComponent } from './frota-cadastro/frota-cadastro.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NovoVeiculoDialogComponent } from './modals/novo-veiculo-dialog/novo-veiculo-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FrotaDisponivelComponent } from './frota-disponivel/frota-disponivel.component';
+import { CommonModule, DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     FrotasComponent,
     FrotaDetalheComponent,
     FrotaCadastroComponent,
-    NovoVeiculoDialogComponent
+    NovoVeiculoDialogComponent,
+    FrotaDisponivelComponent
   ],
   imports: [
     BrowserModule,
@@ -33,9 +36,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     FormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent],
   entryComponents: [NovoVeiculoDialogComponent]
 

@@ -6,19 +6,22 @@
   <hr class="my-4">
 
   <div class="container mt-5">
-    <h2>Lista de Frotas</h2>
+    <h2>Lista de Transportadoras</h2>
     <input type="text" class="form-control mb-3" placeholder="Pesquisar..." [(ngModel)]="searchTerm">
 
     <div class="btn-group mb-3" role="group">
-      <a class="btn btn-primary" [routerLink]="['/cadastro']">Cadastrar Frota</a>
+      <a class="btn btn-primary" [routerLink]="['/cadastro']">Cadastrar Transportadora</a>
     </div>
+    <div class="btn-group mb-3" role="group" style="margin-left: 10px;">
+      <a class="btn btn-success" [routerLink]="['/']">Voltar</a>
+    </div>
+
     <div class="table-responsive">
       <table class="table table-striped">
         <thead>
           <tr>
             <th>#</th>
-            <th>Nome da frota</th>
-            <th>Tipo</th>
+            <th>Nome</th>
             <th>CNPJ</th>
             <th>Status</th>
             <th>Ações</th>
@@ -28,7 +31,6 @@
           <tr *ngFor="let f of filteredFrotas | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
             <td>{{ (p - 1) * 5 + i + 1 }}</td>
             <td>{{ f.nome }}</td>
-            <td>{{ f.tipo }}</td>
             <td>{{ f.cnpj }}</td>
             <td>{{ f.status }}</td>
             <td>

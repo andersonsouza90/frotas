@@ -8,14 +8,13 @@
   <div class="container mt-5" *ngIf="frota">
     <div class="card">
       <div class="card-body">
-        <p class="card-text"><strong>Tipo:</strong> {{ frota.tipo }}</p>
         <p class="card-text"><strong>CNPJ:</strong> {{ frota.cnpj }}</p>
         <p class="card-text"><strong>Status:</strong> {{ frota.status }}</p>
       </div>
     </div>
 
     <div class="mt-4">
-      <h3>Caminhões da frota</h3>
+      <h3>Veículos</h3>
       <div class="table-responsive">
         <table class="table table-striped">
           <thead>
@@ -24,7 +23,6 @@
               <th>Placa</th>
               <th>Modelo</th>
               <th>Situação</th>
-              <th>Motorista</th>
             </tr>
           </thead>
           <tbody>
@@ -32,8 +30,7 @@
               <td>{{ v.id }}</td>
               <td>{{ v.placa }}</td>
               <td>{{ v.modelo }}</td>
-              <td>{{ v.situacao }}</td>
-              <td>{{ v.motorista }}</td>
+              <td>{{ v.status }}</td>
             </tr>
           </tbody>
         </table>

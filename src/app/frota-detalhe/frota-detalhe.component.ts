@@ -13,13 +13,6 @@ export class FrotaDetalheComponent {
 
   frotas: Frota[] = [];
   frota: Frota | undefined;
-  novoVeiculo: Veiculo = {
-    id: 0,
-    placa: '',
-    modelo: '',
-    situacao: 'Pendente',
-    motorista: ''
-  };
 
   constructor(private route: ActivatedRoute, private dataService: DataService, public dialog: MatDialog) { }
 

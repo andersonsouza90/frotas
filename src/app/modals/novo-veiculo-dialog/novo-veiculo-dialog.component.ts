@@ -14,8 +14,7 @@ export class NovoVeiculoDialogComponent {
     id: 0,
     placa: '',
     modelo: '',
-    situacao: 'Pendente',
-    motorista: ''
+    status: 'Disponivel'
   };
 
   veiculoForm: FormGroup;
@@ -27,8 +26,7 @@ export class NovoVeiculoDialogComponent {
   ) {
     this.veiculoForm = this.fb.group({
       placa: ['', Validators.required],
-      modelo: ['', Validators.required],
-      motorista: ['', Validators.required]
+      modelo: ['', Validators.required]
     });
   }
 

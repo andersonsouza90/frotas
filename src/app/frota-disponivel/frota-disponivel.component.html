@@ -1,0 +1,42 @@
+<div class="jumbotron">
+  <div class="icon-link">
+    <i class="fas fa-truck fa-5x"></i>
+    <h4>Frota Disponível </h4>
+  </div>
+  <hr class="my-4">
+
+  <div class="container mt-5">
+    <h2>{{data}} </h2>
+
+
+
+    <div class="btn-group mb-6" role="group">
+      <input type="text" class="form-control mb-6" placeholder="Pesquisar..." [(ngModel)]="searchTerm">
+    </div>
+    <div class="btn-group mb-6" role="group" style="margin-left: 10px;">
+      <a class="btn btn-primary" [routerLink]="['/']">Voltar</a>
+    </div>
+
+    <h3>{{filteredVeiculos.length}} veículos disponíveis</h3>
+    <hr class="my-4">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Placa</th>
+            <th>Modelo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of filteredVeiculos | paginate: { itemsPerPage: 500, currentPage: p }; let i = index">
+            <td>{{ (p - 1) * 5 + i + 1 }}</td>
+            <td>{{ v.placa }}</td>
+            <td>{{ v.modelo }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>

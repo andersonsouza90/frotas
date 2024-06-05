@@ -24,7 +24,6 @@ export class FrotasComponent {
   get filteredFrotas(): Frota[] {
     return this.frotas.filter(frota =>
       frota.nome.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-      frota.tipo.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
       frota.cnpj.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
       frota.status.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
