@@ -15,7 +15,8 @@ export class FrotaCadastroComponent {
     nome: '',
     cnpj: '',
     status: '',
-    veiculos: []
+    veiculos: [],
+    usuarios: []
   };
 
   constructor(private dataService: DataService, private router: Router) { }

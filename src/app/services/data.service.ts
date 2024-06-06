@@ -6,6 +6,7 @@ export interface Frota {
   cnpj: string;
   status: string;
   veiculos: Veiculo[];
+  usuarios: Usuario[];
 }
 
 export interface Veiculo {
@@ -14,6 +15,12 @@ export interface Veiculo {
   modelo: string;
   status: string;
   data?: string;
+}
+
+export interface Usuario{
+  id?: number;
+  nome?: string;
+  email?: string;
 }
 
 @Injectable({
@@ -33,7 +40,8 @@ export class DataService {
         { id: 3, placa: 'CCC-9012', modelo: 'Toco', status: 'Em manutenção' },
         { id: 4, placa: 'FGD-9012', modelo: 'Caminhão Extrapesado', status: 'Disponível' },
         { id: 5, placa: 'HJK-3456', modelo: 'HR', status: 'Disponível' }
-      ]
+      ],
+      usuarios: []
     },
     {
       id: 2,
@@ -46,7 +54,8 @@ export class DataService {
         { id: 8, placa: 'RST-5678', modelo: 'Carreta', status: 'Em manutenção' },
         { id: 9, placa: 'UVW-9012', modelo: 'Bitrem', status: 'Disponível' },
         { id: 10, placa: 'XYZ-3456', modelo: 'Rodotrem', status: 'Disponível' }
-      ]
+      ],
+      usuarios: []
     },
     {
       id: 3,
@@ -59,7 +68,8 @@ export class DataService {
         { id: 13, placa: 'PQR-5678', modelo: 'Toco', status: 'Disponível' },
         { id: 14, placa: 'STU-9012', modelo: 'Caminhão Extrapesado', status: 'Disponível' },
         { id: 15, placa: 'VWX-3456', modelo: 'HR', status: 'Disponível' }
-      ]
+      ],
+      usuarios: []
     },
     {
       id: 4,
@@ -72,7 +82,8 @@ export class DataService {
         { id: 18, placa: 'EFG-5678', modelo: 'Carreta', status: 'Disponível' },
         { id: 19, placa: 'HIJ-9012', modelo: 'Bitrem', status: 'Disponível' },
         { id: 20, placa: 'KLM-3456', modelo: 'Rodotrem', status: 'Em manutenção' }
-      ]
+      ],
+      usuarios: []
     },
     {
       id: 5,
@@ -85,7 +96,8 @@ export class DataService {
         { id: 23, placa: 'TUV-5678', modelo: 'Toco', status: 'Disponível' },
         { id: 24, placa: 'WXY-9012', modelo: 'Caminhão Extrapesado', status: 'Disponível' },
         { id: 25, placa: 'ZAB-3456', modelo: 'HR', status: 'Disponível' }
-      ]
+      ],
+      usuarios: []
     }
   ];
 

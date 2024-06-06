@@ -14,30 +14,61 @@
     </div>
 
     <div class="mt-4">
-      <h3>Veículos</h3>
-      <div class="table-responsive">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Placa</th>
-              <th>Modelo</th>
-              <th>Situação</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let v of frota.veiculos">
-              <td>{{ v.id }}</td>
-              <td>{{ v.placa }}</td>
-              <td>{{ v.modelo }}</td>
-              <td>{{ v.status }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <a class="btn btn-{{classDivVeiculos}}" style="margin-right: 10px;" (click)="exibirDivVeiculos()">Veiculos cadastrados</a>
+      <a class="btn btn-{{classDivUsuarios}}" (click)="exibirDivUsuario()">Acessos da transportadora</a>
     </div>
+      <div name="divVeiculos" *ngIf="flagDivVeiculos">
+        <div class="mt-4">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Placa</th>
+                  <th>Modelo</th>
+                  <th>Situação</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let v of frota.veiculos">
+                  <td>{{ v.id }}</td>
+                  <td>{{ v.placa }}</td>
+                  <td>{{ v.modelo }}</td>
+                  <td>{{ v.status }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-    <a routerLink="/frotas" class="btn btn-primary mt-4" style="margin-right: 10px;">Voltar</a>
-    <button class="btn btn-success mt-4" (click)="openDialog()">Novo veículo</button>
+        <a routerLink="/frotas" class="btn btn-primary mt-4" style="margin-right: 10px;">Voltar</a>
+        <button class="btn btn-success mt-4" (click)="openDialogNovoVeiculo()">Novo veículo</button>
+      </div>
+
+      <div name="divUsuarios" *ngIf="flagDivUsuarios">
+        <div class="mt-4">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nome</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let v of frota.usuarios">
+                  <td>{{ v.id }}</td>
+                  <td>{{ v.nome }}</td>
+                  <td>{{ v.email }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <a routerLink="/frotas" class="btn btn-primary mt-4" style="margin-right: 10px;">Voltar</a>
+        <button class="btn btn-success mt-4" (click)="openDialogNovoUsuario()">Novo acesso</button>
+      </div>
   </div>
 </div>

@@ -16,6 +16,9 @@ import { NovoVeiculoDialogComponent } from './modals/novo-veiculo-dialog/novo-ve
 import { MatDialogModule } from '@angular/material/dialog';
 import { FrotaDisponivelComponent } from './frota-disponivel/frota-disponivel.component';
 import { CommonModule, DatePipe } from '@angular/common';
+import { NovoUsuarioDialogComponent } from './modals/novo-usuario-dialog/novo-usuario-dialog.component';
+import { HomeTransportadoraComponent } from './transportadora/home-transportadora/home-transportadora.component';
+import { MeusVeiculosComponent } from './transportadora/meus-veiculos/meus-veiculos.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { CommonModule, DatePipe } from '@angular/common';
     FrotaDetalheComponent,
     FrotaCadastroComponent,
     NovoVeiculoDialogComponent,
-    FrotaDisponivelComponent
+    FrotaDisponivelComponent,
+    NovoUsuarioDialogComponent,
+    HomeTransportadoraComponent,
+    MeusVeiculosComponent
   ],
   imports: [
     BrowserModule,
